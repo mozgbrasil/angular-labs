@@ -14,6 +14,22 @@ Caso queira contribuir para melhoria da documentação de um Fork no repositóri
 - https://code.visualstudio.com/
 - https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack
 
+## Ambiente
+
+```console
+$ ng help
+$ ng new angular-labs
+
+$ yarn add ?
+
+$ yarn add ? -D
+
+$ ng generate component components/shared/layout
+$ ng generate component components/public/fale-conosco
+$ ng generate component components/private/minha-conta
+
+```
+
 ## Executando local
 
 ```
@@ -29,6 +45,7 @@ code --new-window .
 ## Referências
 
 - https://angular.io/guide/setup-local
+- https://angular.io/cli
 
 # AngularLabs
 
