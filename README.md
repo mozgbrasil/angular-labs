@@ -2,7 +2,7 @@
 
 ![valid XHTML][checkmark]
 
-# angular-labs
+# angular-labs 👉️
 
 ## Contribuição
 
