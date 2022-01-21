@@ -20,8 +20,7 @@
     "loiane.angular-extension-pack",
     "mhutchie.git-graph",
     "mongodb.mongodb-vscode",
-    "rogalmic.bash-debug",
-    "WakaTime.vscode-wakatime"
+    "rogalmic.bash-debug"
   ],
 
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
