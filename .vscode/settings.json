@@ -12,13 +12,13 @@
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "editor.detectIndentation": false,
+  "editor.detectIndentation": true,
   "editor.insertSpaces": true,
   "editor.wordWrap": "on",
   "editor.formatOnSave": true,
   "editor.fontSize": 16,
   "editor.tabSize": 2,
-  "workbench.sideBar.location": "right",
+  "workbench.sideBar.location": "left",
   "editor.minimap.enabled": false,
-  "workbench.colorTheme": "Default Light+"
+  "git.detectSubmodulesLimit": 40
 }

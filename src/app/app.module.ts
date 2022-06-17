@@ -3,22 +3,21 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LayoutComponent } from './components/shared/layout/layout.component';
-import { FaleConoscoComponent } from './components/public/fale-conosco/fale-conosco.component';
-import { MinhaContaComponent } from './components/private/minha-conta/minha-conta.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { SharedModule } from './components/shared/shared.module';
+import { EcommerceModule } from './components/public/ecommerce/ecommerce.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    LayoutComponent,
-    FaleConoscoComponent,
-    MinhaContaComponent,
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    SharedModule,
+    EcommerceModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

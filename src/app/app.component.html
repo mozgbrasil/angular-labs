@@ -1,3 +1,14 @@
-<app-layout>xx</app-layout>
+<mat-card>
+  <mat-slider min="1" max="100" step="1" value="50"></mat-slider>
+</mat-card>
+
+<div class="content" role="main">
+  <!-- Highlight Card -->
+  <div class="card highlight-card card-small">
+    <span>{{ title }} app is running!</span>
+  </div>
+  <!-- Footer -->
+  <footer></footer>
+</div>
 
 <router-outlet></router-outlet>
