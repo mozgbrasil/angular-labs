@@ -1,32 +1,22 @@
-/* To learn more about this file see: https://angular.io/config/tsconfig. */
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "./",
-    "outDir": "./dist/out-tsc",
-    "forceConsistentCasingInFileNames": true,
     "strict": true,
-    "noImplicitOverride": true,
-    "noPropertyAccessFromIndexSignature": true,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": false,
+    // disabled because this is on by default in tsc 2.7 breaking our codebase - we need to refactor
+    "strictPropertyInitialization": false,
+    // disabled because of https://github.com/angular/angular/issues/22877
+    "skipLibCheck": true,
+    "outDir": "./dist/out-tsc",
+    "baseUrl": "src",
     "sourceMap": true,
-    "paths": {
-      "lib-mozg": ["dist/lib-mozg"]
-    },
     "declaration": false,
-    "downlevelIteration": true,
-    "experimentalDecorators": true,
     "moduleResolution": "node",
-    "importHelpers": true,
+    "experimentalDecorators": true,
+    "noUnusedLocals": true,
     "target": "es2020",
-    "module": "es2020",
-    "lib": ["es2020", "dom"]
+    "typeRoots": ["node_modules/@types"],
+    "lib": ["es2016", "dom"]
   },
-  "angularCompilerOptions": {
-    "enableI18nLegacyMessageIdFormat": false,
-    "strictInjectionParameters": true,
-    "strictInputAccessModifiers": true,
-    "strictTemplates": true
-  }
+  "exclude": ["content", "tools", "aio-builds-setup", "node_modules", "scripts"]
 }
