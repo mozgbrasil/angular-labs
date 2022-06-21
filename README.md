@@ -33,32 +33,30 @@ ng generate help
 
 ng generate library lib-mozg
 
-ng generate module components/shared
-ng generate component components/shared
+ng generate module shared
+ng generate component shared
 
-ng generate module components/public/ecommerce
-ng generate component components/public/ecommerce/cart
-ng generate service components/public/ecommerce/cart/cart
-ng generate directive components/public/ecommerce/cart/cart
-ng generate enum components/public/ecommerce/cart/cart-enum
-ng generate interface components/public/ecommerce/cart/cart-interface
-ng generate interface components/public/ecommerce/products/products-interface
-ng generate component components/public/ecommerce/product-alerts
-ng generate component components/public/ecommerce/product-details
-ng generate component components/public/ecommerce/product-list
-ng generate component components/public/ecommerce/shipping
-ng generate component components/public/ecommerce/top-bar
+ng generate module features/ecommerce
+ng generate component features/ecommerce/cart
+ng generate service features/ecommerce/cart/cart
+ng generate directive features/ecommerce/cart/cart
+ng generate enum features/ecommerce/cart/cart-enum
+ng generate interface features/ecommerce/cart/cart-interface
+ng generate interface features/ecommerce/products/products-interface
+ng generate component features/ecommerce/product-alerts
+ng generate component features/ecommerce/product-details
+ng generate component features/ecommerce/product-list
+ng generate component features/ecommerce/shipping
+ng generate component features/ecommerce/toolbar --skip-import
 
-ng generate component components/public/ecommerce/toolbar --skip-import
+ng generate module core
+ng generate component core/debug
+ng generate component core/focus-monitor-directives
+ng generate component core/breakpoint-observer
+ng generate component core/cdk-overlay-basic
+ng generate component core/cdk-platform
+ng generate component core/cdk-portal
 
-ng generate module components/core
-ng generate component components/core/debug
-ng generate component components/core/breakpoint-observer
-ng generate component components/core/cdk-portal
-ng generate component components/core/focus-monitor-directives
-
-
-ng generate component components/private/minha-conta
 
 npm run test
 npm run e2e
