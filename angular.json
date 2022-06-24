@@ -1,185 +1,137 @@
 {
-  "$schema": "./node_modules/@angular-devkit/core/src/workspace/workspace-schema.json",
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
-  "cli": {
-    "packageManager": "yarn",
-    "analytics": false
-  },
-  "newProjectRoot": "content/examples",
+  "newProjectRoot": "projects",
   "projects": {
-    "site": {
+    "angular-labs": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        },
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
       "root": "",
       "sourceRoot": "src",
-      "projectType": "application",
+      "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/ngrx.io",
+            "outputPath": "dist/angular-labs",
             "index": "src/index.html",
             "main": "src/main.ts",
-            "tsConfig": "src/tsconfig.app.json",
-            "outputHashing": "all",
-            "sourceMap": true,
-            "statsJson": true,
-            "namedChunks": true,
             "polyfills": "src/polyfills.ts",
-            "assets": [
-              "src/assets",
-              "src/generated",
-              "src/app/search/search-worker.js",
-              "src/pwa-manifest.json",
-              "src/google385281288605d160.html",
-              {
-                "glob": "custom-elements.min.js",
-                "input": "node_modules/@webcomponents/custom-elements",
-                "output": "/assets/js"
-              },
-              {
-                "glob": "native-shim.js",
-                "input": "node_modules/@webcomponents/custom-elements/src",
-                "output": "/assets/js"
-              }
-            ],
+            "tsConfig": "tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
             ],
             "scripts": []
           },
           "configurations": {
-            "fast": {
-              "optimization": false
-            },
-            "next": {
-              "fileReplacements": [
+            "production": {
+              "budgets": [
                 {
-                  "src": "src/environments/environment.ts",
-                  "replaceWith": "src/environments/environment.next.ts"
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
                 }
               ],
-              "serviceWorker": true
-            },
-            "stable": {
               "fileReplacements": [
                 {
-                  "src": "src/environments/environment.ts",
-                  "replaceWith": "src/environments/environment.stable.ts"
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
                 }
               ],
-              "serviceWorker": true
+              "outputHashing": "all"
             },
-            "archive": {
-              "fileReplacements": [
-                {
-                  "src": "src/environments/environment.ts",
-                  "replaceWith": "src/environments/environment.archive.ts"
-                }
-              ],
-              "serviceWorker": true
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
             }
           },
-          "defaultConfiguration": ""
+          "defaultConfiguration": "production"
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
-          "options": {
-            "browserTarget": "site:build"
-          },
           "configurations": {
-            "fast": {
-              "browserTarget": "site:build:fast"
+            "production": {
+              "browserTarget": "angular-labs:build:production"
             },
-            "next": {
-              "browserTarget": "site:build:next"
-            },
-            "stable": {
-              "browserTarget": "site:build:stable"
-            },
-            "archive": {
-              "browserTarget": "site:build:archive"
+            "development": {
+              "browserTarget": "angular-labs:build:development"
             }
-          }
+          },
+          "defaultConfiguration": "development"
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "site:build"
+            "browserTarget": "angular-labs:build"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "main": "src/test.ts",
-            "karmaConfig": "src/karma.conf.js",
             "polyfills": "src/polyfills.ts",
-            "tsConfig": "src/tsconfig.spec.json",
-            "scripts": [],
+            "tsConfig": "tsconfig.spec.json",
+            "karmaConfig": "karma.conf.js",
+            "inlineStyleLanguage": "scss",
+            "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
             ],
-            "assets": [
-              "src/assets",
-              "src/generated",
-              "src/app/search/search-worker.js",
-              "src/pwa-manifest.json",
-              "src/google385281288605d160.html",
-              {
-                "glob": "custom-elements.min.js",
-                "input": "node_modules/@webcomponents/custom-elements",
-                "output": "/assets/js"
-              },
-              {
-                "glob": "native-shim.js",
-                "input": "node_modules/@webcomponents/custom-elements/src",
-                "output": "/assets/js"
-              }
-            ]
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "src/**/*.ts",
-              "src/**/*.html"
-            ]
+            "scripts": []
           }
         }
       }
     },
-    "site-e2e": {
-      "root": "",
-      "projectType": "application",
-      "cli": {},
-      "schematics": {},
+    "lib-mozg": {
+      "projectType": "library",
+      "root": "projects/lib-mozg",
+      "sourceRoot": "projects/lib-mozg/src",
+      "prefix": "lib",
       "architect": {
-        "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "protractorConfig": "tests/e2e/protractor.conf.js",
-            "devServerTarget": "site:serve"
-          }
+            "project": "projects/lib-mozg/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/lib-mozg/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/lib-mozg/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
         },
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "lintFilePatterns": [
-              "src/**/*.ts",
-              "src/**/*.html"
-            ]
+            "main": "projects/lib-mozg/src/test.ts",
+            "tsConfig": "projects/lib-mozg/tsconfig.spec.json",
+            "karmaConfig": "projects/lib-mozg/karma.conf.js"
           }
         }
       }
-    }
-  },
-  "schematics": {
-    "@schematics/angular:component": {
-      "inlineStyle": true,
-      "prefix": "aio",
-      "style": "scss"
-    },
-    "@schematics/angular:directive": {
-      "prefix": "aio"
     }
   }
 }

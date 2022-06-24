@@ -41,11 +41,4 @@ testem.log
 .DS_Store
 Thumbs.db
 
-# copied dependencies
-src/assets/js/lunr*
-
-# firebase artifacts
-.firebase
-
-#
 .angular/*

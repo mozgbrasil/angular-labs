@@ -1,0 +1,9 @@
+<button
+  mat-icon-button
+  aria-label="notify"
+  color="primary"
+  (click)="notify.emit()"
+  *ngIf="product && product.price > 700"
+>
+  <mat-icon>notifications</mat-icon>
+</button>

@@ -1,0 +1,18 @@
+<ecommerce-toolbar></ecommerce-toolbar>
+<mat-card>
+  <h2>
+    <button mat-raised-button color="primary" [routerLink]="['/']">
+      Products
+    </button>
+    /
+    <button mat-raised-button color="primary">Shipping Prices</button>
+  </h2>
+  <mat-divider></mat-divider>
+  <mat-card class="root-card">
+    <div class="shipping-item" *ngFor="let shipping of shippingCosts | async">
+      <span>{{ shipping.type }}</span
+      >:
+      <span>{{ shipping.price | currency }}</span>
+    </div>
+  </mat-card>
+</mat-card>

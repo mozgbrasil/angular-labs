@@ -1,0 +1,71 @@
+<ecommerce-toolbar></ecommerce-toolbar>
+
+<mat-card>
+  <h2>
+    <button mat-raised-button color="primary" class="mat-typography">
+      Products
+    </button>
+  </h2>
+  <mat-divider></mat-divider>
+  <mat-card>
+    <div class="container">
+      <div class="row">
+        <ng-container *ngFor="let product of products">
+          <div class="col">
+            <mat-card class="root-card">
+              <a
+                [title]="product.name + ' details'"
+                [routerLink]="['/products', product.id]"
+              >
+                <mat-card-header>
+                  <div mat-card-avatar class="example-header-image"></div>
+                  <mat-card-title>
+                    {{ product.name }}
+                  </mat-card-title>
+                  <mat-card-subtitle>&nbsp;</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-title-group>
+                  <mat-card-title>
+                    <mat-card-content>
+                      <p *ngIf="product.description">
+                        Description: {{ product.description }}
+                      </p>
+                    </mat-card-content>
+                  </mat-card-title>
+                  <img
+                    mat-card-sm-image
+                    src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+                  />
+                </mat-card-title-group>
+              </a>
+              <mat-divider inset></mat-divider>
+              <mat-card-actions>
+                <app-product-alerts [product]="product" (notify)="onNotify()">
+                </app-product-alerts>
+                <button
+                  mat-icon-button
+                  aria-label="share"
+                  color="primary"
+                  (click)="share()"
+                >
+                  <mat-icon>share</mat-icon>
+                </button>
+                <button
+                  mat-icon-button
+                  aria-label="addToCart"
+                  color="primary"
+                  (click)="addToCart(product)"
+                >
+                  <mat-icon>shopping_cart_checkout</mat-icon>
+                </button>
+              </mat-card-actions>
+              <mat-card-footer>
+                <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+              </mat-card-footer>
+            </mat-card>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </mat-card>
+</mat-card>
