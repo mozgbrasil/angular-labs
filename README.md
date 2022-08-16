@@ -64,13 +64,11 @@ ng generate component core/sidenav-responsive
 ## Comands
 
 ```console
-
 rm -fr .angular package-lock.json && yarn && yarn start
 
 yarn run test
 yarn run e2e
 yarn run start
-
 ```
 
 ## Executando local

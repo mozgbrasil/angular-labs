@@ -9,7 +9,7 @@ import { DebugComponent } from '../../core/debug/debug.component';
 
 const routes: Routes = [
   { path: 'debug', component: DebugComponent },
-  { path: '', component: ProductListComponent },
+  { path: 'products', component: ProductListComponent },
   { path: 'products/:productId', component: ProductDetailsComponent },
   { path: 'cart', component: CartComponent },
   { path: 'shipping', component: ShippingComponent },
