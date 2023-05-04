@@ -1,10 +1,14 @@
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import {
+	CUSTOM_ELEMENTS_SCHEMA,
+	NO_ERRORS_SCHEMA,
+	NgModule
+} from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 
-import { RoutingModule } from './routing.module';
 import { SharedModule } from '../../shared/shared.module';
+import { EcommerceRoutingModule } from './ecommerce-routing.module';
 
 import { CartComponent } from './cart/cart.component';
 import { CartDirective } from './cart/cart.directive';
@@ -15,25 +19,24 @@ import { ShippingComponent } from './shipping/shipping.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 
 const components = [
-  CartComponent,
-  CartDirective,
-  ProductAlertsComponent,
-  ProductDetailsComponent,
-  ProductListComponent,
-  ShippingComponent,
-  ToolbarComponent,
+	CartComponent,
+	CartDirective,
+	ProductAlertsComponent,
+	ProductDetailsComponent,
+	ProductListComponent,
+	ShippingComponent,
+	ToolbarComponent
 ];
 
 @NgModule({
-  imports: [
-    CommonModule,
-    HttpClientModule,
-    ReactiveFormsModule,
-    RoutingModule,
-    SharedModule,
-  ],
-  declarations: components,
-  exports: components,
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+	declarations: components,
+	imports: [
+		CommonModule,
+		HttpClientModule,
+		ReactiveFormsModule,
+		SharedModule,
+		EcommerceRoutingModule
+	],
+	schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]
 })
 export class EcommerceModule {}

@@ -27,16 +27,53 @@ ng new angular-labs
 
 cd angular-labs
 
+> update npm
+ncu
+ncu -u
+
+> Node.js version v14.20.1 detected. The Angular CLI requires a minimum of v16.13
+nvm ls
+nvm install lts/gallium
+nvm use
+
+> Re-Install
+rm -fr .angular node_modules
+rm package-lock.json
+npm cache clean --force
+npm install
+ng
+npm run start
+
+> Dependency
 ng add @angular/material
+ng add @angular/pwa@latest
 
+> State
+ng add @ngrx/store@latest --no-minimal
+ng add @ngrx/effects@latest --no-minimal
+ng add @ngrx/router-store@latest --no-minimal
+ng add @ngrx/entity@latest
+ng add @ngrx/component-store@latest
+
+> Data
+ng add @ngrx/data@latest --no-minimal
+
+> View
+ng add @ngrx/component@latest
+
+> Developer
+ng add @ngrx/store-devtools@latest
+ng add @ngrx/schematics@latest
+ng add @ngrx/eslint-plugin
+
+> Struct
 ng generate help
-
 ng generate library lib-mozg
 
 ng generate module shared
 ng generate component shared
 
-ng generate module features/ecommerce
+ng generate module features/ecommerce --routing
 ng generate component features/ecommerce/cart
 ng generate service features/ecommerce/cart/cart
 ng generate directive features/ecommerce/cart/cart
@@ -49,7 +86,7 @@ ng generate component features/ecommerce/product-list
 ng generate component features/ecommerce/shipping
 ng generate component features/ecommerce/toolbar --skip-import
 
-ng generate module core
+ng generate module core --routing
 ng generate component core/debug
 ng generate component core/focus-monitor-directives
 ng generate component core/breakpoint-observer
@@ -57,6 +94,7 @@ ng generate component core/cdk-overlay-basic
 ng generate component core/cdk-platform
 ng generate component core/cdk-portal
 ng generate component core/sidenav-responsive
+
 
 
 ```
@@ -90,7 +128,7 @@ code --new-window .
 
 # AngularLabs
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.0.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.6.
 
 ## Development server
 

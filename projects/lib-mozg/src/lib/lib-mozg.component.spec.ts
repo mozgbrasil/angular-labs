@@ -1,17 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MozgLibComponent } from './lib-mozg.component';
+import { LibMozgComponent } from './lib-mozg.component';
 
-describe('MozgLibComponent', () => {
-  let component: MozgLibComponent;
-  let fixture: ComponentFixture<MozgLibComponent>;
+describe('LibMozgComponent', () => {
+  let component: LibMozgComponent;
+  let fixture: ComponentFixture<LibMozgComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [MozgLibComponent],
-    }).compileComponents();
+      declarations: [ LibMozgComponent ]
+    })
+    .compileComponents();
 
-    fixture = TestBed.createComponent(MozgLibComponent);
+    fixture = TestBed.createComponent(LibMozgComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

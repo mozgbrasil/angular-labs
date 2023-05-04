@@ -2,11 +2,19 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'lib-lib-mozg',
-  template: ` <p>lib-mozg works!</p> `,
-  styles: [],
+  template: `
+    <p>
+      lib-mozg works!
+    </p>
+  `,
+  styles: [
+  ]
 })
-export class MozgLibComponent implements OnInit {
-  constructor() {}
+export class LibMozgComponent implements OnInit {
 
-  ngOnInit(): void {}
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
 }

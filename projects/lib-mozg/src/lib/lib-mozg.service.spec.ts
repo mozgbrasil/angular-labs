@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { MozgLibService } from './lib-mozg.service';
+import { LibMozgService } from './lib-mozg.service';
 
-describe('MozgLibService', () => {
-  let service: MozgLibService;
+describe('LibMozgService', () => {
+  let service: LibMozgService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(MozgLibService);
+    service = TestBed.inject(LibMozgService);
   });
 
   it('should be created', () => {

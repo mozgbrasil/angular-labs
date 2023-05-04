@@ -1,9 +1,16 @@
 import { NgModule } from '@angular/core';
-import { MozgLibComponent } from './lib-mozg.component';
+import { LibMozgComponent } from './lib-mozg.component';
+
+
 
 @NgModule({
-  declarations: [MozgLibComponent],
-  imports: [],
-  exports: [MozgLibComponent],
+  declarations: [
+    LibMozgComponent
+  ],
+  imports: [
+  ],
+  exports: [
+    LibMozgComponent
+  ]
 })
-export class MozgLibModule {}
+export class LibMozgModule { }
